@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.weshare.user.SettleClaimTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 69.709 s <<< FAILURE! - in za.co.wethinkcode.weshare.user.SettleClaimTest
+settleClaim  Time elapsed: 66.633 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#i_owe_them"}
+  (Session info: headless chrome=98.0.4758.102)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'black-Vivo', ip: '20.20.21.127', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-100-generic', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a4b2ba98b9b5569227f65acce6a5994e, findElement {using=id, value=i_owe_them}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: /tmp/.com.google.Chrome.v1Jxem}, goog:chromeOptions: {debuggerAddress: localhost:34759}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:34759/devtoo..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a4b2ba98b9b5569227f65acce6a5994e
+	at za.co.wethinkcode.weshare.user.SettleClaimTest.student2_shouldHaveClaimToSettle(SettleClaimTest.java:44)
+	at za.co.wethinkcode.weshare.user.SettleClaimTest.settleClaim(SettleClaimTest.java:25)
+

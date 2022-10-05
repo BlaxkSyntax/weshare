@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.weshare.user.ClaimExpenseTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.88 s <<< FAILURE! - in za.co.wethinkcode.weshare.user.ClaimExpenseTest
+claimExpenseOnce  Time elapsed: 4.411 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "http://localhost:45885/newexpense"
+ but was: "http://localhost:45885/home"
+ignoring case considerations
+	at za.co.wethinkcode.weshare.user.ClaimExpenseTest.claimExpenseOnce(ClaimExpenseTest.java:17)
+
+claimExpenseTwice  Time elapsed: 3.463 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "http://localhost:45885/newexpense"
+ but was: "http://localhost:45885/home"
+ignoring case considerations
+	at za.co.wethinkcode.weshare.user.ClaimExpenseTest.claimExpenseTwice(ClaimExpenseTest.java:43)
+

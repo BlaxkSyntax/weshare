@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.weshare.user.CaptureExpenseTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.008 s <<< FAILURE! - in za.co.wethinkcode.weshare.user.CaptureExpenseTest
+captureExpense  Time elapsed: 14.994 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "http://localhost:40143/newexpense"
+ but was: "http://localhost:40143/home"
+ignoring case considerations
+	at za.co.wethinkcode.weshare.user.CaptureExpenseTest.captureExpense(CaptureExpenseTest.java:16)
+

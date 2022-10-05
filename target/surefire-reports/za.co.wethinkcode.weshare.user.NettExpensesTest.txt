@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.weshare.user.NettExpensesTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 12.544 s <<< FAILURE! - in za.co.wethinkcode.weshare.user.NettExpensesTest
+nothingToShow  Time elapsed: 6.924 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "You don't owe anyone!"
+ but was: "You don't know anyone!"
+	at za.co.wethinkcode.weshare.user.NettExpensesTest.nothingToShow(NettExpensesTest.java:23)
+
+hasExpensesClaimsAndSettlementsToPay  Time elapsed: 5.49 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "600.00"
+ but was: "600,00"
+	at za.co.wethinkcode.weshare.user.NettExpensesTest.verifyExpense(NettExpensesTest.java:66)
+	at za.co.wethinkcode.weshare.user.NettExpensesTest.hasExpensesClaimsAndSettlementsToPay(NettExpensesTest.java:36)
+

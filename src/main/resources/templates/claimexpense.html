@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+</head>
+<body>
+<div layout:fragment="contents">
+    <div>
+        <h1>Submit a claim for the following expense</h1>
+    </div>
+    <div id="expense">
+        <table>
+            <tr>
+                <th>When</th>
+                <th>What</th>
+                <th>How much</th>
+            </tr>
+            <tr>
+                <td th:text="${expense.date}" >2021-10-12</td>
+                <td>
+                    <a th:text="${expense.description}" th:href="@{/claim(expenseId=${expense.id})}" th:name=expensid >Text</a>
+                </td>
+                <td th:text="${#numbers.formatDecimal(expense.amount,1,2)}">2.41</td>
+            </tr>
+        </table>
+        <h3 id="expense_total" >Total amount</h3>
+    </div>
+    <div>
+        <h1>Previous claims for this expense</h1>
+    </div>
+    <div id="expense">
+        <table>
+            <tr>
+                <th>Who</th>
+                <th>Due</th>
+                <th>settled</th>
+                <th>How much</th>
+            </tr>
+            <tr>
+                <td th:text="${claim}" >2021-10-12</td>
+                <td>
+                    <a th:text="${claim}" th:href="@{/claim(expenseId=${claim})}" th:name=expensid >Text</a>
+                </td>
+                <td th:text="${#numbers.formatDecimal(claim,1,2)}">2.41</td>
+                <td th:text="${#numbers.formatDecimal(claim,1,2)}">2.41</td>
+            </tr>
+        </table>
+        <h3 id="expense_total" >Amount that has not been claimed</h3>
+    </div>
+    <form method="post" th:action="@{/claim(expenseId=${expense.id})}" enctype="application/x-www-form-urlencoded">
+        <label for="email">the email address of the person that should pay you?</label>
+        <input name="email" id="email" type="email" autofocus required>
+        <label for="amount">the amount they should pay?</label>
+        <input name="amount" id="amount" type="text" autofocus required>
+        <label for="date">by when must this claim be settled?</label>
+        <input name="date" id="date" type="date" autofocus required>
+        <input id="add-claim" type="submit" value="add-claim"/>
+    </form>
+</div>
+
+</body>
+
+</html>

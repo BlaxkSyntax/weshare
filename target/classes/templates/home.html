@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head>
+</head>
+<body>
+<div layout:fragment="contents">
+    <h2>My expenses</h2>
+    <p id="add_expense"><a href="/expense">Add a new expense</a></p>
+<!--    <a href="/expense">Add a new expense</a>-->
+    <div th:if="${not #lists.isEmpty(expenses)}" id="expenses">
+        <table>
+            <tr>
+                <th>When</th>
+                <th>What</th>
+                <th>How much</th>
+            </tr>
+            <tr th:each="expense,iterStat : ${expenses}">
+                <td th:text="${expense.date}" th:id="'date_' + (${iterStat.count})">2021-10-12</td>
+                <td th:id="'claim_expense_' + (${iterStat.count})">
+                    <a th:text="${expense.description}" th:href="@{/claim(expenseId=${expense.id})}">Text</a>
+                </td>
+                <td th:id="'amount_' + (${iterStat.count})" th:text="${#numbers.formatDecimal(expense.amount,1,2)}">2.41</td>
+            </tr>
+        </table>
+        <h3 id="expense_total" >Total amount</h3>
+    </div>
+    <div th:unless="${not #lists.isEmpty(expenses)}" id="no_expenses">
+        You don't have any expenses!
+    </div>
+    <h2>People that owe me</h2>
+    <div th:if="${not #lists.isEmpty(claims)}" id="they_owe_me">
+        <table>
+            <tr>
+                <th>Who</th>
+                <th>What</th>
+                <th>Due</th>
+                <th>How much</th>
+            </tr>
+            <tr th:each="claim,iterStat : ${claims}">
+                <td th:text="${#strings.capitalize(#strings.substringBefore(claim.claimedFrom.email, '@'))}">Text</td>
+                <td th:text="${claim.expense.description}">Text</td>
+                <td th:text="${claim.dueDate}" th:id="'date_' + (${iterStat.count})">2021-10-12</td>
+                <td th:text="${#numbers.formatDecimal(claim.amount,1,2)}">2.41</td>
+            </tr>
+        </table>
+    </div>
+    <div th:unless="${not #lists.isEmpty(claims)}" id="nobody_owes">
+        Nobody owes you any money!
+    </div>
+    <h2>People I owe</h2>
+    <div th:if="${not #lists.isEmpty(claims)}" id="i_owe_them">
+        <table>
+            <tr>
+                <th>Who</th>
+                <th>What</th>
+                <th>Due</th>
+                <th>How much</th>
+            </tr>
+            <tr th:each="claim,iterStat : ${claims}">
+                <td th:text="${#strings.capitalize(#strings.substringBefore(claim.claimedFrom.email, '@'))}">Text</td>
+                <td>
+                    <a th:text="${claim.description}" th:href="@{/settle(claimId=${claim.id})}">Text</a>
+                </td>
+                <td th:text="${claim.dueDate}" th:id="'date_' + (${iterStat.count})">2021-10-12</td>
+                <td th:text="${#numbers.formatDecimal(claim.amount,1,2)}">2.41</td>
+            </tr>
+        </table>
+    </div>
+    <div th:unless="${not #lists.isEmpty(claims)}" id="owe_nobody">
+        You don't know anyone!
+    </div>we
+</div>
+</body>
+
+</html>

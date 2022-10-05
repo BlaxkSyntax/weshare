@@ -1,0 +1,28 @@
+<html
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+    layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+    <div>
+        <div>
+            <h1>Settle a claim</h1>
+        </div>
+        <div>
+            <form method="post" action="/settle" enctype="application/x-www-form-urlencoded">
+            	<label for="email">You want to settle a claim from</label>
+            	<input name="email" id="email" type="email" autofocus required>
+            	<label for="due_">that was due on</label>
+            	<input name="due_" id="due_" type="date" autofocus required>
+            	<label for="description">For</label>
+            	<input name="description" id="description" type="text" autofocus required>
+                <label for="amount">You owe?</label>
+            	<input name="amount" id="amount" type="text" autofocus required>
+            	<input id="add-claim" type="submit" value="settle"/>
+        	</form>
+    	</div>
+    </div>
+</div>
+</body>
+
+</html>
